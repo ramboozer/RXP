@@ -934,18 +934,18 @@ RXPGuides.RegisterGuide([[
 #next 27-29 Ashenvale
 step
 .abandon 480 >> Abandon The Weaver
-.inOnQuest 480
+.isOnQuest 480
 step
 .abandon 1013 >> Abandon The Book of Ur
-.inOnQuest 1013
+.isOnQuest 1013
 .dungeon SFK
 step
 .abandon 1014 >> Abandon Arugal Must Die
-.inOnQuest 1014
+.isOnQuest 1014
 .dungeon SFK
 step
 .abandon 1098 >> Abandon Deathstalkers in Shadowfang
-.inOnQuest 1098
+.isOnQuest 1098
 .dungeon SFK
 step << Shaman/Warrior
 .goto Thunder Bluff,54.06,57.25
@@ -7342,7 +7342,7 @@ step
 step
 .goto Undercity,48.80,69.28
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r
-.accept 1113 >> Accept Hearts of Zeal
+.accept 1113 >>Accept Hearts of Zeal
 .target Master Apothecary Faranell
 .isQuestTurnedIn 1109 
 .dungeon SM
@@ -7387,7 +7387,7 @@ step
 step
 #completewith Compendium
 >>Kill |cRXP_LOOT_Scarlet|r mobs. Loot them for their|cRXP_LOOT_Hearts of Zeal|r
-.complete 1113 
+.complete 1113,1 
 .isOnQuest 1113
 .dungeon SM
 step
@@ -14426,7 +14426,7 @@ step << !Mage
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorkas|r
 .fly Undercity >>Fly to Undercity
 .target Gorkas
-.zoneskip Hinterlands,1
+.zoneskip The Hinterlands,1
 step << Mage
 #completewith next
 .cast 3563 >>Cast |T135766:0|t[Teleport: Undercity]
@@ -18927,7 +18927,7 @@ step
 >>|cRXP_WARN_They patrol the road between the Timbermaw Hold tunnel and Winterfall Village northeast of Everlook. Alternatively, run back through the cave to Felwood, and kill the Runner located at the cauldron in Felpaw Village|r
 .complete 5087,1 
 .unitscan Winterfall Runner
-.zone Felwood
+.zone Felwood >> Travel to Felwood
 step
 .goto Felwood,60.20,5.90
 >>Kill |cRXP_ENEMY_Winterfall Runners|r
@@ -19579,14 +19579,6 @@ step
 .complete 6042,1 
 .mob Plaguehound
 .mob Noxious Plaguebat
-
-
-
-
-
-
-
-
 step
 #completewith next
 .subzone 2268 >> Travel to Light's Hope Chapel
@@ -20228,7 +20220,7 @@ step
 .target High Executor Derrington
 step
 #completewith next
-.subzone >> Travel back to Light's Hope Chapel
+.subzone 2268 >> Travel back to Light's Hope Chapel
 .group
 step
 .goto Eastern Plaguelands,81.52,59.76
